@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: visitor-number-app
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+    disk:
+      name: data
+      sizeGB: 1
+    routes:
+      - type: http
+        source: /
+        destination: /
